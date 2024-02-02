@@ -1,7 +1,8 @@
 
 ## 🌐 Live Demo
 
-Explore the live demonstration of the project: [nextjs14-devoverflow](https://nextjs14-devoverflow.vercel.app/)
+Explore the live demonstration of the project: [Live](https://stackoverflow-clone-five.vercel.app/)
+
 
 ## 📝 Description
 
