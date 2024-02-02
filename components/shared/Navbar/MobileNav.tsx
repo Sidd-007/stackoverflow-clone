@@ -66,7 +66,7 @@ const MobileNav = () => {
                         alt="DevOverflow"
                     />
 
-                    <p className="h2-bold  text-dark100_light900 font-spaceGrotesk">Dev <span className="text-primary-500">Overflow</span></p>
+                    <p className="h2-bold  text-dark100_light900 font-spaceGrotesk">Overflow</p>
                 </Link>
                 <div>
                     <SheetClose asChild>

@@ -5,6 +5,7 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
@@ -16,7 +17,7 @@ body {
     @apply flex justify-start items-center;
   }
   .card-wrapper {
-    @apply bg-light-900 dark:dark-gradient shadow-light-100;
+    @apply bg-light-900 dark:bg-[#0b080f] shadow-[0px_0px_3px_0px_#00000024] border dark:border-[#1F2937];
   }
   .btn {
     @apply bg-light-800 dark:bg-dark-300 !important;
@@ -28,10 +29,10 @@ body {
     @apply bg-light-700 dark:bg-dark-300 !important;
   }
   .markdown {
-    @apply max-w-full prose dark:prose-p:text-light-700 dark:pros;
+    @apply max-w-full prose dark:prose-p:text-light-700;
   }
   .primary-gradient {
-    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+    background: linear-gradient(129deg, #6225c5 0%, #7f46dc 100%);
   }
   .dark-gradient {
     background: linear-gradient(
@@ -41,12 +42,13 @@ body {
     );
   }
   .tab {
-    @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-5;
+    @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-500;
   }
 }
 .no-focus {
-  @apply focus-visible:ring-0 focus-visible:ring-transparent ;
+  @apply outline-none ring-0 focus:ring-transparent focus-visible:ring-0 focus-visible:ring-transparent focus:border-blue-500
 }
+
 .active-theme {
   filter: invert(53%) sepia(98%) saturate(3332%) hue-rotate(0deg)
     brightness(104%) contrast(106%) !important;
@@ -59,7 +61,7 @@ body {
   );
 }
 .primary-text-gradient {
-  background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+  background: linear-gradient(129deg, #6225c5 0%, #7f46dc 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -116,7 +118,7 @@ color: inherit !important;
   /* Clerk */
 }
 .cl-internal-b3fm6y {
-  background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+  background: linear-gradient(129deg, #6225c5 0%, #7f46dc 100%);
 }
 .hash-span {
   margin-top: -140px;
