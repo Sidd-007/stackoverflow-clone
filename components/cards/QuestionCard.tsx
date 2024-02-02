@@ -8,7 +8,7 @@ import EditDeleteAction from "../shared/EditDeleteAction";
 interface QuestionProps {
     _id: string;
     title: string;
-    tags: Array<{ _id: string; name: string }>;
+    tags: { _id: string; name: string }[];
     author: {
         _id: string;
         name: string;

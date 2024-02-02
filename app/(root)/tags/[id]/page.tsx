@@ -3,7 +3,7 @@ import NoResult from '@/components/shared/NoResult'
 import Pagination from '@/components/shared/Pagination'
 import LocalSearchBar from '@/components/shared/Search/LocalSearchBar'
 import { IQuestion } from '@/database/question.model'
-import { getQuestionByTagId } from '@/lib/actions/tag.actions'
+import { getQuestionsByTagId } from '@/lib/actions/tag.actions'
 import { URLProps } from '@/types'
 import { auth } from '@clerk/nextjs'
 import React from 'react'
@@ -11,11 +11,13 @@ import React from 'react'
 const Page = async ({ params, searchParams }: URLProps) => {
     const { userId: clerkId } = auth();
 
-    const result = await getQuestionByTagId({
+    const result = await getQuestionsByTagId({
         tagId: params.id,
         searchQuery: searchParams.q,
         page: searchParams?.page ? +searchParams.page : 1
     })
+
+
     return (
         <>
             <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -32,16 +34,19 @@ const Page = async ({ params, searchParams }: URLProps) => {
             </div>
 
             <div className="mt-10 flex w-full flex-col gap-6">
-                {result.questions.length > 0 ? result.questions.map((question: IQuestion) => {
-                    // console.log(question.author[0]._doc)
+                {result.questions?.length > 0 ? result.questions.map((question: IQuestion) => {
+                    // console.log(question.tags)
                     return (
                         <QuestionCard
                             key={question._id}
                             _id={question._id}
                             clerkId={clerkId}
                             title={question.title}
+                            // @ts-ignore
                             tags={question.tags}
+                            // @ts-ignore
                             author={question.author}
+                            // @ts-ignore
                             upvotes={question.upvotes}
                             views={question.views}
                             answers={question.answers}
